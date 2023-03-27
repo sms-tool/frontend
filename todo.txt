@@ -1,0 +1,15 @@
+1. upload shape images 
+add more color options
+
+get countries to correctly display data
+get regions to correctly display data
+
+when deleting a country > call api to delete all data within that country
+when deleting a region > call api to delete all countries and locations associated with that region
+when deleting a year > call api(s) to delete all regions, countries, and locations associated with the year
+
+nit pickig:
+improve dashboard appearance
+
+
+upload to github and save
