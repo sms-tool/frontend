@@ -102,7 +102,7 @@ function displayData(url){
 		        `<div class="plot">
                     <img src="../shapes/star.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
-	 		            ${locationData.locationData}
+	 		            ${locationData.locationData} , ${locationData.countryName}
 			        </div>
 		        </div>
             `;
@@ -112,7 +112,7 @@ function displayData(url){
 		        `<div class="plot">
                     <img src="../shapes/circle.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
-	 		            ${locationData.locationData}
+	 		            ${locationData.locationData} , ${locationData.countryName}
 			        </div>
 		        </div>
             `;
@@ -122,7 +122,7 @@ function displayData(url){
 		        `<div class="plot">
                     <img src="../shapes/square.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
-	 		            ${locationData.locationData}
+	 		            ${locationData.locationData} , ${locationData.countryName}
 			        </div>
 		        </div>
             `;
@@ -132,17 +132,31 @@ function displayData(url){
 		        `<div class="plot">
                     <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
-	 		            ${locationData.locationData}
+	 		            ${locationData.locationData} , ${locationData.countryName}
 			        </div>
 		        </div>
             `;
         }
-        // else if (`${locationData.shape}` == "circle"){
-            
-        // }
-        // else if (`${locationData.shape}` == "square"){
-            // 
-        // }
+		else if (`${locationData.shape}` == "triangle"){
+			plotVal.innerHTML = 
+			`<div class="plot">
+			  <img src="../shapes/triangle.png" class="shape ${locationData.color}">
+			  <div class="dataText"> 
+					${locationData.locationData} , ${locationData.countryName}
+				</div>
+			</div>
+			`;
+		  }
+		  else if (`${locationData.shape}` == "diamond"){
+			plotVal.innerHTML = 
+			`<div class="plot">
+			  <img src="../shapes/diamond.png" class="shape ${locationData.color}">
+			  <div class="dataText"> 
+					${locationData.locationData} , ${locationData.countryName}
+				</div>
+			</div>
+			`;
+		  }
 		plotPosition.appendChild(plotVal);
 		console.log("star plotted");
     });
@@ -233,6 +247,7 @@ function saveLocationData(
 				"yearID": yearID, 
 				"regionID": regionID, 
 				"countryID": countryID, 
+				"countryName": country,
 				"locationData": locationData, 
 				"securityLvl": securityLvl,
 				"standard1": standard1,
@@ -263,7 +278,8 @@ function saveLocationData(
       body: JSON.stringify({
 				"yearID": yearID, 
 				"regionID": regionID, 
-				"countryID": countryID, 
+				"countryID": countryID,
+				"countryName": country, 
 				"locationData": locationData, 
 				"securityLvl": securityLvl,
 				"standard1": standard1,

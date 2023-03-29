@@ -76,41 +76,61 @@ function displayData(url){
           `<div class="plot">
                   <img src="../shapes/star.png" class="shape ${locationData.color}">
             <div class="dataText"> 
-                ${locationData.locationData}
+                ${locationData.locationData} , ${locationData.countryName}
             </div>
           </div>
           `;
-      }
-    else  if (`${locationData.shape}` == "circle"){
-          plotVal.innerHTML = 
-          `<div class="plot">
-                  <img src="../shapes/circle.png" class="shape ${locationData.color}">
-            <div class="dataText"> 
-                ${locationData.locationData}
+        }
+        else  if (`${locationData.shape}` == "circle"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/circle.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
             </div>
-          </div>
-          `;
-      }
-    else  if (`${locationData.shape}` == "square"){
-          plotVal.innerHTML = 
-          `<div class="plot">
-                  <img src="../shapes/square.png" class="shape ${locationData.color}">
-            <div class="dataText"> 
-                ${locationData.locationData}
+            `;
+          }
+        else  if (`${locationData.shape}` == "square"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/square.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
             </div>
-          </div>
-          `;
-      }
-    else  if (`${locationData.shape}` == "trapezoid"){
-          plotVal.innerHTML = 
-          `<div class="plot">
-                  <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
-            <div class="dataText"> 
-                ${locationData.locationData}
+            `;
+          }
+        else  if (`${locationData.shape}` == "trapezoid"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
             </div>
-          </div>
-          `;
-      }
+            `;
+          }
+          else if (`${locationData.shape}` == "triangle"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+              <img src="../shapes/triangle.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
+          else if (`${locationData.shape}` == "diamond"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+              <img src="../shapes/diamond.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
 		plotPosition.appendChild(plotVal);
 		
     });

@@ -52,6 +52,8 @@ div_new.innerHTML = `
             <option value="circle"> Circle </option>
             <option value="square"> Square </option>
             <option value="trapezoid"> Trapezoid </option>
+            <option value="triangle"> Triangle </option>
+            <option value="diamond"> Diamond </option>
 					</select>
 					<a href="#" onclick="saveCountry('new_country', 'shapeInput', 'colorInput')">Save </a>
       </div>
@@ -88,24 +90,31 @@ function returnCountries(url){
       else if (`${country.shape}` == "square"){
         plotVal.innerHTML = 
         `<div class="key">
-          <img src="../shapes/star.png" class="shape ${country.color}">
+          <img src="../shapes/square.png" class="shape ${country.color}">
         </div>
         `;
       }
       else if (`${country.shape}` == "trapezoid"){
         plotVal.innerHTML = 
         `<div class="key">
-          <img src="../shapes/star.png" class="shape ${country.color}">
+          <img src="../shapes/trapezoid.png" class="shape ${country.color}">
         </div>
         `;
       }
-      // else if (`${country.shape}` == "star"){
-      //   plotVal.innerHTML = 
-      //   `<div>
-      //     <img src="../shapes/star.png" class="${country.shape} ${country.color}">
-      //   </div>
-      //   `;
-      // }
+      else if (`${country.shape}` == "triangle"){
+        plotVal.innerHTML = 
+        `<div class="key">
+          <img src="../shapes/triangle.png" class="shape ${country.color}">
+        </div>
+        `;
+      }
+      else if (`${country.shape}` == "diamond"){
+        plotVal.innerHTML = 
+        `<div class="key">
+          <img src="../shapes/diamond.png" class="shape ${country.color}">
+        </div>
+        `;
+      }
       div_card.innerHTML = `
       <div class="column">
         <div class="card" id="${country._id}">
@@ -146,7 +155,7 @@ function displayData(url){
       `<div class="plot">
               <img src="../shapes/star.png" class="shape ${locationData.color}">
         <div class="dataText"> 
-             ${locationData.locationData}
+             ${locationData.locationData} , ${locationData.countryName}
         </div>
       </div>
       `;
@@ -156,7 +165,7 @@ else  if (`${locationData.shape}` == "circle"){
       `<div class="plot">
               <img src="../shapes/circle.png" class="shape ${locationData.color}">
         <div class="dataText"> 
-             ${locationData.locationData}
+             ${locationData.locationData} , ${locationData.countryName}
         </div>
       </div>
       `;
@@ -166,7 +175,7 @@ else  if (`${locationData.shape}` == "square"){
       `<div class="plot">
               <img src="../shapes/square.png" class="shape ${locationData.color}">
         <div class="dataText"> 
-             ${locationData.locationData}
+             ${locationData.locationData} , ${locationData.countryName}
         </div>
       </div>
       `;
@@ -176,10 +185,30 @@ else  if (`${locationData.shape}` == "trapezoid"){
       `<div class="plot">
               <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
         <div class="dataText"> 
-             ${locationData.locationData}
+             ${locationData.locationData} , ${locationData.countryName}
         </div>
       </div>
       `;
+  }
+  else  if (`${locationData.shape}` == "triangle"){
+    plotVal.innerHTML = 
+    `<div class="plot">
+            <img src="../shapes/triangle.png" class="shape ${locationData.color}">
+      <div class="dataText"> 
+           ${locationData.locationData} , ${locationData.countryName}
+      </div>
+    </div>
+    `;
+  }
+  else  if (`${locationData.shape}` == "diamond"){
+    plotVal.innerHTML = 
+    `<div class="plot">
+            <img src="../shapes/diamond.png" class="shape ${locationData.color}">
+      <div class="dataText"> 
+           ${locationData.locationData} , ${locationData.countryName}
+      </div>
+    </div>
+    `;
   }
 		plotPosition.appendChild(plotVal);
 		
@@ -239,6 +268,16 @@ function saveCountry(countryInputId, shapeInput, colorInput, id="") {
 }
 
 function deleteCountry(id) {
+  fetch(APILINK + id, {
+    method: 'DELETE'
+  }).then(res => res.json())
+    .then(res => {
+      console.log(res)
+      location.reload();
+    });    
+}
+
+function deletelocationData(id) {
   fetch(APILINK + id, {
     method: 'DELETE'
   }).then(res => res.json())
