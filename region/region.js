@@ -71,16 +71,46 @@ function displayData(url){
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');
-		if (`${locationData.shape}` == "star"){
+        if (`${locationData.shape}` == "star"){
           plotVal.innerHTML = 
           `<div class="plot">
-            <img src="../shapes/star.png" class="${locationData.shape} ${locationData.color}">
+                  <img src="../shapes/star.png" class="shape ${locationData.color}">
             <div class="dataText"> 
                 ${locationData.locationData}
             </div>
           </div>
           `;
-        }
+      }
+    else  if (`${locationData.shape}` == "circle"){
+          plotVal.innerHTML = 
+          `<div class="plot">
+                  <img src="../shapes/circle.png" class="shape ${locationData.color}">
+            <div class="dataText"> 
+                ${locationData.locationData}
+            </div>
+          </div>
+          `;
+      }
+    else  if (`${locationData.shape}` == "square"){
+          plotVal.innerHTML = 
+          `<div class="plot">
+                  <img src="../shapes/square.png" class="shape ${locationData.color}">
+            <div class="dataText"> 
+                ${locationData.locationData}
+            </div>
+          </div>
+          `;
+      }
+    else  if (`${locationData.shape}` == "trapezoid"){
+          plotVal.innerHTML = 
+          `<div class="plot">
+                  <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
+            <div class="dataText"> 
+                ${locationData.locationData}
+            </div>
+          </div>
+          `;
+      }
 		plotPosition.appendChild(plotVal);
 		
     });

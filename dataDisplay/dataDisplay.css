@@ -39,28 +39,28 @@
 }
 
 .display-red{
-    background-color: red;
+    background-color: #ff0000;
     aspect-ratio : 1 / 1;
     width: 19%;
     margin: 2px;
 }
 
 .display-orange{
-    background-color: orange;
+    background-color: #ffc000;
     aspect-ratio : 1 / 1;
     width: 19%;
     margin: 2px;
 }
 
 .display-yellow{
-    background-color: yellow;
+    background-color: #ffff00;
     aspect-ratio : 1 / 1;
     width: 19%;
     margin: 2px;
 }
 
 .display-green{
-    background-color: green;
+    background-color: #92D050;
     aspect-ratio : 1 / 1;
     width: 19%;
     margin: 2px;

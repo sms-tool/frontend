@@ -1,14 +1,19 @@
-.star{
+.shape{
     float: left;
 	width: 20%;
 }
 
-.star img{
+.key{
+	width: 10%;
+	float: left;
+}
+
+.shape img{
 	width: 90%;
 }
 
 .red{
-	filter: invert(10%) sepia(39%) saturate(6886%) hue-rotate(342deg) brightness(133%) contrast(115%);
+	filter: invert(15%) sepia(93%) saturate(2440%) hue-rotate(346deg) brightness(96%) contrast(87%);
 }
 
 .orange{
@@ -20,11 +25,11 @@
 }
 
 .green{
-filter: invert(46%) sepia(44%) saturate(6981%) hue-rotate(128deg) brightness(94%) contrast(98%);
+	filter: invert(32%) sepia(95%) saturate(748%) hue-rotate(108deg) brightness(92%) contrast(101%);
 }
 
 .light-blue{
-	filter: invert(85%) sepia(30%) saturate(1247%) hue-rotate(162deg) brightness(99%) contrast(99%);
+	filter: invert(53%) sepia(56%) saturate(419%) hue-rotate(167deg) brightness(97%) contrast(90%);
 }
 
 .dark-blue{
@@ -37,4 +42,20 @@ filter: invert(46%) sepia(44%) saturate(6981%) hue-rotate(128deg) brightness(94%
 
 .pink{
 	filter: invert(65%) sepia(22%) saturate(924%) hue-rotate(291deg) brightness(112%) contrast(98%);
+}
+
+.white{
+	filter: invert(100%) sepia(11%) saturate(26%) hue-rotate(211deg) brightness(117%) contrast(100%);
+}
+
+.gray{
+	filter: invert(92%) sepia(0%) saturate(419%) hue-rotate(155deg) brightness(82%) contrast(94%);
+}
+
+.dirt{
+	filter: invert(27%) sepia(89%) saturate(1486%) hue-rotate(36deg) brightness(97%) contrast(101%);
+}
+
+.light-green{
+	filter: invert(89%) sepia(13%) saturate(1295%) hue-rotate(65deg) brightness(90%) contrast(90%);
 }

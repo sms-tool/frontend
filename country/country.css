@@ -61,8 +61,7 @@
   }
   
   .column {
-      margin: auto;
-    width: 30%;
+    margin: auto;
     padding: 10px 10px;
   }
   
@@ -92,6 +91,10 @@
   
   #edit{
       margin-top: 10px;
+  }
+
+  #add{
+    width: 50%;
   }
   
   

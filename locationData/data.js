@@ -24,11 +24,11 @@ divNav.innerHTML= `
 	</div>
 
  	<div class="topnav">
-	    <a class="active" href="../region/region.html?yearID=${yearID}&year=${year}"> Back to Region </a>
+	    <a class="active" href="../region/region.html?yearID=${yearID}&year=${year}"> Back to ${region} </a>
 	</div>
  	
     <div class="topnav">
-		<a class="active" href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}"> Back to Country </a>
+		<a class="active" href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}"> Back to ${country} </a>
 	</div>
 `
 container.appendChild(divNav);
@@ -100,7 +100,37 @@ function displayData(url){
         if (`${locationData.shape}` == "star"){
             plotVal.innerHTML = 
 		        `<div class="plot">
-                    <img src="../shapes/star.png" class="${locationData.shape} ${locationData.color}">
+                    <img src="../shapes/star.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData}
+			        </div>
+		        </div>
+            `;
+        }
+		else  if (`${locationData.shape}` == "circle"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/circle.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData}
+			        </div>
+		        </div>
+            `;
+        }
+		else  if (`${locationData.shape}` == "square"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/square.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData}
+			        </div>
+		        </div>
+            `;
+        }
+		else  if (`${locationData.shape}` == "trapezoid"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
 	 		            ${locationData.locationData}
 			        </div>
