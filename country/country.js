@@ -67,10 +67,10 @@ function returnCountries(url){
   .then(function(data){
   console.log(data);
   data.forEach(country => {
-		console.log(country._id);
-		console.log(country.country);
-    console.log(country.shape);
-    console.log()
+		// console.log(country._id);
+		// console.log(country.country);
+    // console.log(country.shape);
+    // console.log()
       const div_card = document.createElement('div');
       const plotVal = document.createElement('div');
 		  if (`${country.shape}` == "star"){
@@ -146,7 +146,7 @@ function displayData(url){
 		let capacityLvL = locationData.capacity;
 		
 		let idVal = securityLvl.toString() + capacityLvL.toString()
-		console.log(idVal);
+		// console.log(idVal);
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');

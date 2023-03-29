@@ -67,7 +67,7 @@ function displayData(url){
 		let capacityLvL = locationData.capacity;
 		
 		let idVal = securityLvl.toString() + capacityLvL.toString()
-		console.log(idVal);
+		// console.log(idVal);
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');

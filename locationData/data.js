@@ -93,7 +93,7 @@ function displayData(url){
 		let capacityLvL = locationData.capacity;
 		
 		let idVal = securityLvl.toString() + capacityLvL.toString()
-		console.log(idVal);
+		// console.log(idVal);
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');
@@ -158,7 +158,7 @@ function displayData(url){
 			`;
 		  }
 		plotPosition.appendChild(plotVal);
-		console.log("star plotted");
+		// console.log("star plotted");
     });
   });
 }
@@ -191,7 +191,7 @@ function returnLocationDatas(url){
 		location.innerHTML = locationData.locationData;
 		securityLvl.innerHTML = locationData.securityLvl;
 		capacity.innerHTML = locationData.capacity;
-		console.log(locationData.capacity);
+		// console.log(locationData.capacity);
 		standard1.innerHTML = locationData.standard1;
 		standard2.innerHTML = locationData.standard2;
 		standard3.innerHTML = locationData.standard3;
