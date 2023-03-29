@@ -6,9 +6,9 @@
   }
   
   body {
-  
     font-family: sans-serif;
     color: black;
+    background-color: rgb(223, 223, 223);
   }
   
   #container{
