@@ -67,13 +67,6 @@ function returnCountries(url){
   .then(function(data){
   console.log(data);
   data.forEach(country => {
-<<<<<<< HEAD:ircsmstool/country/country.js
-=======
-		// console.log(country._id);
-		// console.log(country.country);
-    // console.log(country.shape);
-    // console.log()
->>>>>>> e7ba32e8f3a009d25329d8a27dc5a4999f4ad9ac:country/country.js
       const div_card = document.createElement('div');
       const plotVal = document.createElement('div');
 		  if (`${country.shape}` == "star"){
@@ -122,18 +115,9 @@ function returnCountries(url){
       <div class="column">
         <div class="card" id="${country._id}">
         <div class="${country.shape} ${country.color}"> </div>
-<<<<<<< HEAD:ircsmstool/country/country.js
           <div class="link">
         <a href="../locationData/data.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}&countryID=${country._id}&country=${country.country}&shape=${country.shape}&color=${country.color}"> ${country.country} </a> <br>
       <div id="edit">
-=======
-          ${country.country} <br>
-          <div class="link">
-        <a href="../locationData/data.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}&countryID=${country._id}&country=${country.country}&shape=${country.shape}&color=${country.color}"> Link to Data for ${country.country} </a> <br>
-      <div id="edit">
-          <a href="#"onclick="editCountry('${country._id}','${country.country}', '${country.selection}')"> Edit</a> 
-          |
->>>>>>> e7ba32e8f3a009d25329d8a27dc5a4999f4ad9ac:country/country.js
           <a href="#" onclick="deleteCountry('${country._id}')"> Delete</a>
         </div>
       </div>
