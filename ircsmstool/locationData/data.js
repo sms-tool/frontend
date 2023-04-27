@@ -24,16 +24,16 @@ divNav.innerHTML= `
 	</div>
 
  	<div class="topnav">
-	    <a class="active" href="../region/region.html?yearID=${yearID}&year=${year}"> Back to Region </a>
+	    <a class="active" href="../region/region.html?yearID=${yearID}&year=${year}"> Back to ${region} </a>
 	</div>
  	
     <div class="topnav">
-		<a class="active" href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}"> Back to Country </a>
+		<a class="active" href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${regionID}&region=${region}"> Back to ${country} </a>
 	</div>
 `
 container.appendChild(divNav);
 
-title.innerText = `Data for the Country Of:`;
+title.innerText = `Locations In `;
 title.innerText += ' ' + country;
 
 
@@ -93,28 +93,72 @@ function displayData(url){
 		let capacityLvL = locationData.capacity;
 		
 		let idVal = securityLvl.toString() + capacityLvL.toString()
-		console.log(idVal);
+		// console.log(idVal);
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');
         if (`${locationData.shape}` == "star"){
             plotVal.innerHTML = 
 		        `<div class="plot">
-                    <img src="../shapes/star.png" class="${locationData.shape} ${locationData.color}">
+                    <img src="../shapes/star.png" class="shape ${locationData.color}">
 			        <div class="dataText"> 
-	 		            ${locationData.locationData}
+	 		            ${locationData.locationData} , ${locationData.countryName}
 			        </div>
 		        </div>
             `;
         }
-        // else if (`${locationData.shape}` == "circle"){
-            
-        // }
-        // else if (`${locationData.shape}` == "square"){
-            // 
-        // }
+		else  if (`${locationData.shape}` == "circle"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/circle.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData} , ${locationData.countryName}
+			        </div>
+		        </div>
+            `;
+        }
+		else  if (`${locationData.shape}` == "square"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/square.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData} , ${locationData.countryName}
+			        </div>
+		        </div>
+            `;
+        }
+		else  if (`${locationData.shape}` == "trapezoid"){
+            plotVal.innerHTML = 
+		        `<div class="plot">
+                    <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
+			        <div class="dataText"> 
+	 		            ${locationData.locationData} , ${locationData.countryName}
+			        </div>
+		        </div>
+            `;
+        }
+		else if (`${locationData.shape}` == "triangle"){
+			plotVal.innerHTML = 
+			`<div class="plot">
+			  <img src="../shapes/triangle.png" class="shape ${locationData.color}">
+			  <div class="dataText"> 
+					${locationData.locationData} , ${locationData.countryName}
+				</div>
+			</div>
+			`;
+		  }
+		  else if (`${locationData.shape}` == "diamond"){
+			plotVal.innerHTML = 
+			`<div class="plot">
+			  <img src="../shapes/diamond.png" class="shape ${locationData.color}">
+			  <div class="dataText"> 
+					${locationData.locationData} , ${locationData.countryName}
+				</div>
+			</div>
+			`;
+		  }
 		plotPosition.appendChild(plotVal);
-		console.log("star plotted");
+		// console.log("star plotted");
     });
   });
 }
@@ -147,7 +191,7 @@ function returnLocationDatas(url){
 		location.innerHTML = locationData.locationData;
 		securityLvl.innerHTML = locationData.securityLvl;
 		capacity.innerHTML = locationData.capacity;
-		console.log(locationData.capacity);
+		// console.log(locationData.capacity);
 		standard1.innerHTML = locationData.standard1;
 		standard2.innerHTML = locationData.standard2;
 		standard3.innerHTML = locationData.standard3;
@@ -203,6 +247,7 @@ function saveLocationData(
 				"yearID": yearID, 
 				"regionID": regionID, 
 				"countryID": countryID, 
+				"countryName": country,
 				"locationData": locationData, 
 				"securityLvl": securityLvl,
 				"standard1": standard1,
@@ -233,7 +278,8 @@ function saveLocationData(
       body: JSON.stringify({
 				"yearID": yearID, 
 				"regionID": regionID, 
-				"countryID": countryID, 
+				"countryID": countryID,
+				"countryName": country, 
 				"locationData": locationData, 
 				"securityLvl": securityLvl,
 				"standard1": standard1,

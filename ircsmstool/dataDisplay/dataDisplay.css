@@ -1,12 +1,11 @@
+
 #dataChartDisplay{
-    background-color: #f3f3f3;
-    width: 95%;
-    margin: auto;
+    width: 90%;
     margin-bottom: 50px;
     text-align: center;
-    position: absolute;
-    left: 2%;
     z-index: 0;
+		margin: auto;
+	position: relative;
 }
 
 #dataChartDisplay h2{
@@ -33,38 +32,37 @@
 
 .display-black{
     background-color: black;
-    aspect-ratio : 1 / 1;
     width: 19%;
+    min-height: 150px;
     margin: 2px;
 }
 
 .display-red{
-    background-color: red;
-    aspect-ratio : 1 / 1;
+    background-color: #ff0000;
     width: 19%;
+    min-height: 150px;
     margin: 2px;
 }
 
 .display-orange{
-    background-color: orange;
-    aspect-ratio : 1 / 1;
+    background-color: #ffc000;
     width: 19%;
+    min-height: 150px;
     margin: 2px;
 }
 
 .display-yellow{
-    background-color: yellow;
-    aspect-ratio : 1 / 1;
+    background-color: #ffff00;
     width: 19%;
+    min-height: 150px;
     margin: 2px;
 }
 
 .display-green{
-    background-color: green;
-    aspect-ratio : 1 / 1;
+    background-color: #92D050;
     width: 19%;
+    min-height: 150px;
     margin: 2px;
-    display: flex;
 }
 
 plot {
@@ -100,12 +98,14 @@ plot {
 
 #diagonal{
   visibility: visible;
-  width: 95%;
+	
+  width: 200%;
   height: 5px;
   background-color: #555753;
-  transform: skewY(-25deg);
-  position: absolute;
-  top: 51%;
-  left: 3%; 
+  transform: rotate(-35deg);
+	transform-origin: bottom left;
+	position: absolute;
+	bottom: 10%;
+	left: 0%; 
   z-index: 1;
 }

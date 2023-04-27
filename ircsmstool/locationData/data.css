@@ -87,12 +87,12 @@
   }
   
   #dataTable{
-      background-color: white;
+			width: 80%
       padding: 10px;
       border-radius: 20px;
-      margin-left: 10%;
-      margin-right: 10%;
-      margin-bottom: 5%;
+      margin: 10%;
+		margin-top: 0%;
+		margin-bottom: 0%
   }
   
   #dataTable th{

@@ -37,9 +37,8 @@ function returnYears(url) {
 				div_card.innerHTML = `
 				<div class="column" id="${years._id}">
 					<div class="card">
-		 			<b> ${years.year} </b> <br>
 					<div class="link">
-						<a href="../region/region.html?yearID=${years._id}&year=${years.year}"> Link to Regions for ${years.year} </a> <br>
+						<a href="../region/region.html?yearID=${years._id}&year=${years.year}"> ${years.year} </a> <br>
 	 				<div>
 		 			<div class = "buttons">
 						<a href = "#" onclick="editYear('${years._id}','${years.year}')" >Edit</a>

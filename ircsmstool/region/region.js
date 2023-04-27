@@ -16,7 +16,7 @@ divNav.innerHTML= `
 `
 container.appendChild(divNav);
 
-title.innerText = `Regions for Year:`;
+title.innerText = `Regions for `;
 title.innerText += ' ' + year;
 
 const div_new = document.createElement('div');
@@ -41,9 +41,8 @@ function returnRegions(url){
       div_card.innerHTML = `
         <div class="column">
         <div class="card" id="${region._id}">
-        ${region.region} <br> 
 				<div class="link">
-				<a href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${region._id}&region=${region.region}"> Link to Countries for ${region.region} </a> <br>
+				<a href="../country/country.html?yearID=${yearID}&year=${year}&regionID=${region._id}&region=${region.region}"> ${region.region} </a> <br>
 	 			<div id="edit">
                 <a href="#"onclick="editRegion('${region._id}','${region.region}')"> Edit</a> 
 				|
@@ -67,20 +66,70 @@ function displayData(url){
 		let capacityLvL = locationData.capacity;
 		
 		let idVal = securityLvl.toString() + capacityLvL.toString()
-		console.log(idVal);
+		// console.log(idVal);
 
 		const plotPosition = document.getElementById(idVal);
 		const plotVal = document.createElement('div');
-		if (`${locationData.shape}` == "star"){
+        if (`${locationData.shape}` == "star"){
           plotVal.innerHTML = 
           `<div class="plot">
-            <img src="../shapes/star.png" class="${locationData.shape} ${locationData.color}">
+                  <img src="../shapes/star.png" class="shape ${locationData.color}">
             <div class="dataText"> 
-                ${locationData.locationData}
+                ${locationData.locationData} , ${locationData.countryName}
             </div>
           </div>
           `;
         }
+        else  if (`${locationData.shape}` == "circle"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/circle.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
+        else  if (`${locationData.shape}` == "square"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/square.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
+        else  if (`${locationData.shape}` == "trapezoid"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+                    <img src="../shapes/trapezoid.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
+          else if (`${locationData.shape}` == "triangle"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+              <img src="../shapes/triangle.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
+          else if (`${locationData.shape}` == "diamond"){
+            plotVal.innerHTML = 
+            `<div class="plot">
+              <img src="../shapes/diamond.png" class="shape ${locationData.color}">
+              <div class="dataText"> 
+                  ${locationData.locationData} , ${locationData.countryName}
+              </div>
+            </div>
+            `;
+          }
 		plotPosition.appendChild(plotVal);
 		
     });
