@@ -1,5 +1,8 @@
 const homepage = new URL(location.href);
 const APILINK = 'https://yearbackend.wli2424.repl.co/api/v1/year/';
+const regionAPILink= 'https://regionsbackend.wli2424.repl.co/api/v1/regions/';
+const countryAPILink = 'https://countrybackend.wli2424.repl.co/api/v1/countries/';
+const locationAPILink = 'https://locationdatabackend.wli2424.repl.co/api/v1/locationDatas/';
 
 const main = document.getElementById("add");
 const title = document.getElementById("title");
